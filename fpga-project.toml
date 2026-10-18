@@ -1,0 +1,25 @@
+[project]
+name = "riscv32I"
+version = "0.1.0"
+description = "FPGA project for Tang Nano 20K — Gowin GW2AR-18"
+
+[target]
+family = "gowin"
+device = "GW2AR-18"
+package = "QFN88"
+nextpnr_device = "GW2AR-LV18QN88C8/I7"
+nextpnr_family = "GW2A-18C"
+
+[target.clock]
+frequency = 27000000
+
+[target.board]
+name = "tang-nano-20k"
+constraints = "src/const/tang-nano-20k.cst"
+
+[sources]
+top = "riscv32I"
+systemverilog = ["src/verilog/*.sv"]
+
+[build]
+output_dir = "build"
